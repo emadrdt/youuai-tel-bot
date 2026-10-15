@@ -19,7 +19,7 @@ from assistant import MAX_INPUT_CHARS, AssistantError, ai_assistant
 from memory import MEMORY_LIMIT
 
 load_dotenv()
-TOKEN = os.getenv("token_bot")
+TOKEN = os.getenv("TOKEN_BOT")
 
 logging.basicConfig(
     format="%(asctime)s %(levelname)s %(name)s: %(message)s",
