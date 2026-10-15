@@ -2,6 +2,7 @@ import asyncio
 import logging
 import os
 
+from keep_alive import run_in_background
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.constants import ChatAction
@@ -210,6 +211,7 @@ def main() -> None:
     app.add_handler(MessageHandler(filters.Document.FileExtension("txt"), handle_document))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))
 
+    run_in_background()   # وب‌سرور کوچک برای Back4app
     app.run_polling()
 
 
